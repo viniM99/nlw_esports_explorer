@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    background-image: url(/assets/bg.png);
+    background-image: url('/assets/bg.png');
     background-position: top center;
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -33,11 +33,14 @@ header div {
     background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     border-radius: 50%;
     padding: 4px;
+
+    /* primeiro valor é o nome da animação que vai haver transição e por segundo, o tempo em que ela vai executar */
     transition: transform .3s;
+    animation: fromTop .7s .2s backwards;
 }
 
 header div:hover {
-    transform: scale(1.1);
+    transform: scale(1.1);  /* atribui o tipo de animação */
 }
 
 header img {
@@ -53,40 +56,44 @@ main {
     gap: 24px;
 }
 
-section {
+main section {
     background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     padding-top: 4px;
     border-radius: 10px;
+
+    /* primeiro valor é o nome da animação que vai haver transição e por segundo, o tempo em que ela vai executar */
+    animation: fromBottom .7s backwards;
 }
 
-section div {
+main section div {
     background-color: #2A2634;
     border-radius: 8px;
     padding: 24px 32px;
 }
 
-section h2 {
+main section h2 {
     letter-spacing: -0.47px;
 }
 
-section p {
+main section p {
     letter-spacing: -0.18px;
     color: #a1a1aa;
 }
 
-section ul {
+main section ul {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     margin-top: 24px;
 }
 
-section ul li {
+main section ul li {
+    /* primeiro valor é o nome da animação que vai haver transição e por segundo, o tempo em que ela vai executar */
     transition: transform .3s;
 }
 
-section ul li:hover {
-    transform: scale(1.1);
+main section ul li:hover {
+    transform: scale(1.1); /* atribui o tipo de animação */
 }
 
 .game-list img {
@@ -100,15 +107,12 @@ section ul li:hover {
     border-radius: 50%;
 }
 
+.social-list a {
+    color: #3A0CA3;
+}
+
+
 /* animation */
-header div {
-    animation: fromTop .7s .2s backwards;
-}
-
-main section {
-    animation: fromBottom .7s backwards;
-}
-
 main section:nth-child(1) {
     animation-delay: 0;
 }
@@ -121,6 +125,7 @@ main section:nth-child(3) {
     animation-delay: .8s;
 }
 
+/* animação que faz com que a foto de perfil venha de cima para baixo */
 @keyframes fromTop {
     from {
         opacity: 0;
@@ -132,6 +137,7 @@ main section:nth-child(3) {
     }
 }
 
+/* animação que traz o main de baixo para cima */
 @keyframes fromBottom {
     from {
         opacity: 0;
